@@ -21,7 +21,7 @@
     "clean": "run-p clean:node_modules-cache clean:next-cache clean:next-output",
     "build:ci": "run-s clean next:build next:export",
     "postbuild:ci": "node scripts/post-export.js",
-    "build": "run-s clean next:build",
+    "build": "next build && next export",
     "serve-nextjs-output": "serve out -l 3000",
     "serve": "run-s build next:start",
     "serve:ci": "cross-env NODE_ENV=local run-s build:ci serve-nextjs-output",
